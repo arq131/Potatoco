@@ -1,11 +1,8 @@
 package Products;
 
-import Products.Pic_paths;
-import Products.Descriptions;
-
 public class Product {
     private int id;
-    private Pic_paths path = new Pic_paths();
+    private String name;
     private String pic;
     private Descriptions desc = new Descriptions();
     private String description;
@@ -13,8 +10,8 @@ public class Product {
     public Product(int id){
         super();
         this.id = id;
-        this.pic = path.getPicPath(id);
-        path = null;
+        this.name = desc.getName(id);
+        this.pic = desc.getPic(id);
         this.description = desc.getDescription(id);
         desc = null;
     }
