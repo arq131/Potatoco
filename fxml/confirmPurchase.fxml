@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane layoutX="1.0" prefHeight="771.0" prefWidth="1023.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Accordion layoutX="14.0" layoutY="76.0" maxHeight="1024.0" prefHeight="552.0" prefWidth="637.0">
+                    <panes>
+                        <TitledPane fx:id="shipping" expanded="false" layoutX="10.0" layoutY="10.0" maxHeight="1024.0" minWidth="-Infinity" prefHeight="550.0" prefWidth="637.0" text="Shipping Address">
+                           <content>
+                              <AnchorPane maxHeight="1024.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0">
+                                 <children>
+                                    <TextField layoutX="15.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="First Name">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                    <TextField layoutX="205.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="Last Name" />
+                                    <TextField layoutX="15.0" layoutY="120.0" opacity="0.75" prefWidth="256.0" promptText="Email" />
+                                    <Label layoutX="15.0" layoutY="24.0" text="Name *" textFill="#050505" />
+                                    <Label layoutX="15.0" layoutY="96.0" text="Email" />
+                                    <TextField layoutX="15.0" layoutY="192.0" prefWidth="256.0" promptText="Address" />
+                                    <TextField layoutX="15.0" layoutY="264.0" prefWidth="175.0" promptText="City" />
+                                    <TextField layoutX="205.0" layoutY="264.0" prefHeight="25.0" prefWidth="175.0" promptText="State" />
+                                    <Label layoutX="15.0" layoutY="168.0" text="Street Address *" />
+                                    <Label layoutX="15.0" layoutY="240.0" text="City *" />
+                                    <Label layoutX="205.0" layoutY="240.0" text="State *" />
+                                    <Label layoutX="292.0" layoutY="168.0" text="Apt. #" />
+                                    <TextField layoutX="292.0" layoutY="192.0" prefHeight="25.0" prefWidth="45.0" promptText="#" />
+                                    <Label layoutX="15.0" layoutY="312.0" text="Postal / Zip *" />
+                                    <Label layoutX="205.0" layoutY="312.0" text="Country *" />
+                                    <ChoiceBox layoutX="205.0" layoutY="336.0" prefWidth="175.0" />
+                                    <TextField layoutX="15.0" layoutY="336.0" prefWidth="175.0" promptText="Postal / Zip" />
+                                    <TextField layoutX="15.0" layoutY="408.0" prefWidth="205.0" promptText="Phone Number" />
+                                    <Label layoutX="15.0" layoutY="384.0" text="Phone Number *" />
+                                    <CheckBox layoutX="19.0" layoutY="451.0" mnemonicParsing="false" text="My shipping address is the same as my billing address" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane expanded="false" maxHeight="1024.0" minWidth="-Infinity" prefHeight="550.0" prefWidth="637.0" text="Billing Address">
+                           <content>
+                              <AnchorPane fx:id="billing" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0">
+                                 <children>
+                                    <TextField layoutX="15.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="First Name">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                    <TextField layoutX="205.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="Last Name" />
+                                    <TextField layoutX="15.0" layoutY="120.0" opacity="0.75" prefWidth="256.0" promptText="Email" />
+                                    <Label layoutX="15.0" layoutY="24.0" text="Name *" textFill="#050505" />
+                                    <Label layoutX="15.0" layoutY="96.0" text="Email" />
+                                    <TextField layoutX="15.0" layoutY="192.0" prefWidth="256.0" promptText="Address" />
+                                    <TextField layoutX="15.0" layoutY="264.0" prefWidth="175.0" promptText="City" />
+                                    <TextField layoutX="205.0" layoutY="264.0" prefHeight="25.0" prefWidth="175.0" promptText="State" />
+                                    <Label layoutX="15.0" layoutY="168.0" text="Street Address *" />
+                                    <Label layoutX="15.0" layoutY="240.0" text="City *" />
+                                    <Label layoutX="205.0" layoutY="240.0" text="State *" />
+                                    <Label layoutX="292.0" layoutY="168.0" text="Apt. #" />
+                                    <TextField layoutX="292.0" layoutY="192.0" prefHeight="25.0" prefWidth="45.0" promptText="#" />
+                                    <Label layoutX="15.0" layoutY="312.0" text="Postal / Zip *" />
+                                    <Label layoutX="205.0" layoutY="312.0" text="Country *" />
+                                    <ChoiceBox layoutX="205.0" layoutY="336.0" prefWidth="175.0" />
+                                    <TextField layoutX="15.0" layoutY="336.0" prefWidth="175.0" promptText="Postal / Zip" />
+                                    <TextField layoutX="15.0" layoutY="408.0" prefWidth="205.0" promptText="Phone Number" />
+                                    <Label layoutX="15.0" layoutY="384.0" text="Phone Number *" />
+                                    <CheckBox layoutX="19.0" layoutY="451.0" mnemonicParsing="false" text="My shipping address is the same as my billing address" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane fx:id="payment" expanded="false" maxHeight="1024.0" prefHeight="550.0" prefWidth="637.0" text="Payment Method">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="635.0">
+                                 <children>
+                                    <TextArea layoutX="146.0" layoutY="165.0" opacity="0.75" prefHeight="200.0" prefWidth="348.0" text="WORK IN PROGRESS&#10;&#10;meanwhile, enjoy the free products &#10;&#10;:^)">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </TextArea>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <Pane fx:id="receipt" layoutX="715.0" layoutY="76.0" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #d3d3d3;" />
+                  <ImageView fx:id="logo" fitHeight="56.0" fitWidth="63.0" layoutX="11.0" layoutY="11.0">
+                     <image>
+                        <Image url="@../pictures/potatocoLogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
