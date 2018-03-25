@@ -37,19 +37,19 @@ public class AppController implements Initializable {
 					controller = new RegistrationController((User)arg, null);
 					break;
 				case HOME:
-					fxmlFile = this.getClass().getResource("/view/LaunchScreen.fxml");
+					fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
 					controller = new RegistrationController((User)arg, null);
 					break;
 				case LOGIN:
-					fxmlFile = this.getClass().getResource("/view/LoggedinView.fxml");
+					fxmlFile = this.getClass().getResource("/LoggedinView.fxml");
 					controller = new LoginController((CurrentUser)arg);
 					break;	
 				case SIGNEDOUT:
-					fxmlFile = this.getClass().getResource("/view/signedoutView.fxml");
+					fxmlFile = this.getClass().getResource("/signedoutView.fxml");
 					controller = new LoginController((CurrentUser)arg);
 					break;
 				case SIGNINAGAIN:
-					fxmlFile = this.getClass().getResource("/view/SigninAgain.fxml");
+					fxmlFile = this.getClass().getResource("/SigninAgain.fxml");
 					controller = new LoginController((CurrentUser)arg);
 					break;
 			
