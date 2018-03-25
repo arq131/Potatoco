@@ -15,7 +15,7 @@ public class Launcher extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		AppController appControl = AppController.getInstance();
-		URL res = this.getClass().getResource("/view/LaunchScreen.fxml");
+		URL res = this.getClass().getResource("/LaunchScreen.fxml");
 		FXMLLoader loader = new FXMLLoader(res);
 		loader.setController(appControl);
 		Parent root = loader.load();

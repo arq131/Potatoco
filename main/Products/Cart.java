@@ -2,7 +2,7 @@ package Products;
 
 import java.util.ArrayList;
 
-import model.Product;
+
 
 public class Cart {
 	// cart requires:

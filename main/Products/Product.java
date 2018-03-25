@@ -27,4 +27,9 @@ public class Product {
     public String getDescription() {
         return description;
     }
+
+	public double getCost() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
