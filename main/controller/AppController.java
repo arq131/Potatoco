@@ -33,7 +33,7 @@ public class AppController implements Initializable {
 			URL fxmlFile = null;
 			switch(viewType) {
 				case REGISTRATION:
-					fxmlFile = this.getClass().getResource("/view/RegistrationView.fxml");
+					fxmlFile = this.getClass().getResource("/RegistrationView.fxml");
 					controller = new RegistrationController((User)arg, null);
 					break;
 				case HOME:
