@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Ellipse?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="770.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink fx:id="signin" layoutX="848.0" layoutY="89.0" onAction="#signIn" text="Log in" />
+            <Button layoutX="950.0" layoutY="88.0" mnemonicParsing="false" onAction="#signUp" text="Register" textFill="#200bd6" />
+            <Ellipse fill="DODGERBLUE" layoutX="114.0" layoutY="112.0" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label />
+            <Hyperlink layoutX="356.0" layoutY="743.0" text="HELP" />
+            <Hyperlink layoutX="551.0" layoutY="744.0" text="SETTINGS" />
+            <Hyperlink layoutX="724.0" layoutY="743.0" text="FAQ" />
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
