@@ -45,7 +45,7 @@ public class AppController implements Initializable {
 					controller = new LoginController((CurrentUser)arg);
 					break;	
 				case SIGNEDOUT:
-					fxmlFile = this.getClass().getResource("/signedoutView.fxml");
+					fxmlFile = this.getClass().getResource("/ProductsView.fxml");
 					controller = new LoginController((CurrentUser)arg);
 					break;
 				case SIGNINAGAIN:
