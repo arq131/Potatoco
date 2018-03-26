@@ -6,6 +6,7 @@ public class Product {
     private String pic;
     private Descriptions desc = new Descriptions();
     private String description;
+    private double cost;
 
     public Product(int id){
         super();
@@ -13,9 +14,12 @@ public class Product {
         this.name = desc.getName(id);
         this.pic = desc.getPic(id);
         this.description = desc.getDescription(id);
+        this.cost = desc.getCost(id);
         desc = null;
     }
-
+    public String getName() {
+    	return name;
+    }
     public int getId() {
         return id;
     }
@@ -30,6 +34,6 @@ public class Product {
 
 	public double getCost() {
 		// TODO Auto-generated method stub
-		return 0;
+		return cost;
 	}
 }

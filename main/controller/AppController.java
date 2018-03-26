@@ -71,9 +71,11 @@ public class AppController implements Initializable, MyController {
 	}
 
 	public VBox createPage(int index) {
+		Product product = new Product(index);
 		ImageView imageView = new ImageView();
-		Label label = new Label();
-		File file = new File("pictures/Potatogram.jpg");
+		Label name = new Label();
+		Label cost = new Label();
+		File file = new File(product.getPic());
 		System.out.println("Index = " + index);
 		try {
 			BufferedImage bufferedImage = ImageIO.read(file);
@@ -88,8 +90,10 @@ public class AppController implements Initializable, MyController {
 		}
 
 		try {
-			label.setText("This is a test description");
-			label.setWrapText(true);
+			name.setText(product.getName());
+			name.setWrapText(true);
+			cost.setText("$" + product.getCost());
+			cost.setWrapText(true);
 
 		} catch (Exception e) {
 			System.out.println("Error: Exception found: " + e.getMessage());
@@ -97,7 +101,8 @@ public class AppController implements Initializable, MyController {
 
 		VBox box = new VBox();
 		box.getChildren().add(imageView);
-		box.getChildren().add(label);
+		box.getChildren().add(name);
+		box.getChildren().add(cost);
 		return box;
 
 	}
