@@ -22,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -33,6 +34,7 @@ import javafx.fxml.*;
 
 public class AppController implements Initializable {
 	
+	public Stage stage;
 	private static AppController myInstance = null;
 	public static final int REGISTRATION = 1;
 	public static final int HOME = 2;
@@ -42,7 +44,7 @@ public class AppController implements Initializable {
 	public static final int CONFIRMATION = 6;
 	public static final int VIEWCART = 7;
 	public static final int SIGNEDIN = 8;
-	private BorderPane rootPane = null;
+	private Pane rootPane = null;
 	public int state = 0;
 	
 	File images[];
@@ -143,8 +145,10 @@ public class AppController implements Initializable {
 			FXMLLoader loader = new FXMLLoader(fxmlFile);
 			loader.setController(controller);
 			Parent viewNode = loader.load();
-			rootPane.setCenter(viewNode);
-			rootPane.setTop(null);
+			Scene scene = new Scene(viewNode, 1024, 768);
+			stage.setScene(scene);
+			
+			//rootPane.setTop(null);
 			//Stage stage = (Stage) launch.getScene().getWindow();
 			//stage.hide();
 		
@@ -175,12 +179,13 @@ public class AppController implements Initializable {
 			myInstance = new AppController();
 		return myInstance;
 	}
-	public BorderPane getRootPane() {
-		return rootPane;
-	}
 	
 	public void setRootPane(BorderPane root) {
 		this.rootPane = root;
+	}
+	
+	public void setStage(Stage stage) {
+		this.stage = stage;
 	}
 
 	@Override

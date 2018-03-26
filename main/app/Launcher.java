@@ -21,10 +21,13 @@ public class Launcher extends Application {
 		loader.setController(appControl);
 		Parent root = loader.load();
 		appControl.setRootPane((BorderPane)root);
+		((AppController) loader.getController()).setStage(primaryStage);
+		
 		
 		Scene scene = new Scene(root, 1024, 768);
 		primaryStage.setTitle("Welcome to Potaco");
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
 		primaryStage.show();
 		
 	}
