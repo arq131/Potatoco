@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Pagination?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
@@ -59,6 +60,9 @@
       </SplitPane>
    </bottom>
    <center>
-      <Pagination prefHeight="435.0" prefWidth="888.0" BorderPane.alignment="CENTER" />
+      <Pagination maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="888.0" BorderPane.alignment="CENTER" />
    </center>
+   <right>
+      <ListView fixedCellSize="3.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffdd00;" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>
