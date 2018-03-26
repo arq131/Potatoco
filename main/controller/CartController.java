@@ -27,8 +27,15 @@ public class CartController implements Initializable, MyController{
 	
 	@FXML
 	public void purchase(ActionEvent event) throws Exception{
-		AppController.getInstance().changeView(AppController.HOME, null);
+		AppController.getInstance().changeView(AppController.HOME, null); // this needs to go to confirm page.
 	}
+	
+	@FXML
+	public void remove(ActionEvent event) throws Exception{
+		// removeFromCart(PRODUCT);
+		// reset cart view to show one less item.
+	}
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

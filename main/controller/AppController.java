@@ -28,6 +28,7 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import model.CurrentUser;
 import model.User;
+import Products.Cart;
 import javafx.fxml.*;
 
 public class AppController implements Initializable {
@@ -128,7 +129,8 @@ public class AppController implements Initializable {
 					
 					break;
 				case VIEWCART:
-					
+					fxmlFile = this.getClass().getResource("/CartView.fxml");
+					controller = new CartController((Cart)arg);
 					break;
 			
 			}
@@ -158,6 +160,11 @@ public class AppController implements Initializable {
 	void signOut(ActionEvent event) throws Exception{
 		changeView(SIGNEDOUT,null);
 	}
+	@FXML
+	void viewCart(ActionEvent event) throws Exception{
+		changeView(VIEWCART, null);
+	}
+	
 	public static AppController getInstance() {
 		if(myInstance == null)
 			myInstance = new AppController();
