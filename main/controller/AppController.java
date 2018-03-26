@@ -39,6 +39,7 @@ public class AppController implements Initializable {
 	public static final int SIGNEDOUT = 4;
 	public static final int SIGNINAGAIN = 5;
 	public static final int CONFIRMATION = 6;
+	public static final int VIEWCART = 7;
 	private BorderPane rootPane = null;
 	public int state = 0;
 	
@@ -124,6 +125,9 @@ public class AppController implements Initializable {
 					controller = new LoginController((CurrentUser)arg);
 					break;
 				case CONFIRMATION:
+					
+					break;
+				case VIEWCART:
 					
 					break;
 			
