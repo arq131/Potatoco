@@ -42,7 +42,7 @@ public class LoginController implements Initializable, MyController {
 	}
 	@FXML
 	public void cancel(ActionEvent event) throws Exception{
-		AppController.getInstance().changeView(AppController.LOGIN, currentuser);
+		AppController.getInstance().changeView(AppController.HOME, currentuser);
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

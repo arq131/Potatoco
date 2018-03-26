@@ -103,7 +103,7 @@
                     </panes>
                   </Accordion>
                   <Pane fx:id="receipt" layoutX="715.0" layoutY="76.0" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #d3d3d3;" />
-                  <ImageView fx:id="logo" fitHeight="56.0" fitWidth="63.0" layoutX="11.0" layoutY="11.0">
+                  <ImageView fx:id="logo" fitHeight="56.0" fitWidth="63.0" layoutX="11.0" layoutY="11.0" onMouseReleased="#back">
                      <image>
                         <Image url="@../pictures/potatocoLogo.png" />
                      </image>

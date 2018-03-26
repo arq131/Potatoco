@@ -1,4 +1,4 @@
-package Products;
+package products;
 
 public class Descriptions {
     public String[] names = new String[1000];
