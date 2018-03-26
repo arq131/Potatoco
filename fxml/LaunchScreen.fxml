@@ -21,7 +21,7 @@
             <Pane prefHeight="169.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);">
                <children>
                   <Separator layoutX="810.0" layoutY="53.0" prefWidth="200.0" />
-                  <Button fx:id="buy" layoutX="913.0" layoutY="72.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="80.0" style="-fx-background-image: url('C:\Users\Lamak\git\Potatoco\pictures\cart.png');" text="Button" />
+                  <Button fx:id="buy" layoutX="913.0" layoutY="72.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="80.0" style="-fx-background-image: url('C:\Users\Lamak\git\Potatoco\pictures\cart.png');" text="Cart" />
                </children>
             </Pane>
             <Hyperlink fx:id="signin" layoutX="846.0" layoutY="17.0" onAction="#signIn" text="Log in" />
@@ -60,9 +60,13 @@
       </SplitPane>
    </bottom>
    <center>
-      <Pagination maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="888.0" BorderPane.alignment="CENTER" />
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Pagination fx:id="products" maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="824.0" style="-fx-background-color: #FFF990;" />
+         </children>
+      </Pane>
    </center>
    <right>
-      <ListView fixedCellSize="3.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffdd00;" BorderPane.alignment="CENTER" />
+      <ListView fixedCellSize="3.0" opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #778899;" BorderPane.alignment="CENTER" />
    </right>
 </BorderPane>

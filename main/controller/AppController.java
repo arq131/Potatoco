@@ -1,13 +1,28 @@
 package controller;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.imageio.ImageIO;
+
+import Products.Product;
 import javafx.fxml.Initializable;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.*;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.*;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
+import javafx.util.Duration;
 import model.CurrentUser;
 import model.User;
 import javafx.fxml.*;
@@ -23,8 +38,44 @@ public class AppController implements Initializable {
 	private BorderPane rootPane = null;
 	public int state = 0;
 	
+	File images[];
+	
+	@FXML
+	public Pagination products;
 	
 	private AppController() {
+		
+	}
+	
+	@FXML
+	public void display() {
+		Timeline fiveS = new Timeline(new KeyFrame(Duration.seconds(10), event -> {
+			int pos = (products.getCurrentPageIndex()+1) % products.getPageCount();
+			products.setCurrentPageIndex(pos);
+		}));
+		fiveS.setCycleCount(Timeline.INDEFINITE);
+		fiveS.play();
+		
+	}
+	
+	public VBox createPage(int index) {
+		ImageView imageView = new ImageView();
+		File file = new File("pictures/ball.png");
+		System.out.println("Index = " + index);
+		try {
+			BufferedImage bufferedImage = ImageIO.read(file);
+			Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+            imageView.setImage(image);
+            imageView.setFitWidth(400);
+            imageView.setPreserveRatio(true);
+            imageView.setSmooth(true);
+            imageView.setCache(true);
+		} catch (Exception e) {
+			System.out.println("Error: Exception found: " + e.getMessage());
+		}
+		VBox box = new VBox();
+		box.getChildren().add(imageView);
+		return box;
 		
 	}
 	
@@ -92,7 +143,8 @@ public class AppController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
-		// TODO Auto-generated method stub
+		products.setPageFactory((Integer index) -> createPage(index));
+		
 		
 	}
 	
