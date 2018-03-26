@@ -20,7 +20,7 @@ import controller.AppController;
 public class CartController implements Initializable, MyController{
 	
 	private Cart cart;
-	private Button purchaseItems;
+	private Button buy;
 	
 	public CartController(Cart cart) {
 		this.cart = cart;

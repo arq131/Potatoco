@@ -129,7 +129,8 @@ public class AppController implements Initializable {
 					controller = new LoginController((CurrentUser)arg);
 					break;
 				case CONFIRMATION:
-					
+					fxmlFile = this.getClass().getResource("/SigninAgain.fxml");
+					controller = new LoginController((CurrentUser)arg);
 					break;
 				case VIEWCART:
 					fxmlFile = this.getClass().getResource("/CartView.fxml");
