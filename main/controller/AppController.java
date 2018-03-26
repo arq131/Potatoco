@@ -15,12 +15,15 @@ import javafx.application.*;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.*;
+import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import model.CurrentUser;
@@ -35,6 +38,7 @@ public class AppController implements Initializable {
 	public static final int LOGIN = 3;
 	public static final int SIGNEDOUT = 4;
 	public static final int SIGNINAGAIN = 5;
+	public static final int CONFIRMATION = 6;
 	private BorderPane rootPane = null;
 	public int state = 0;
 	
@@ -42,6 +46,9 @@ public class AppController implements Initializable {
 	
 	@FXML
 	public Pagination products;
+	
+	@FXML
+	public AnchorPane launch;
 	
 	private AppController() {
 		
@@ -60,7 +67,8 @@ public class AppController implements Initializable {
 	
 	public VBox createPage(int index) {
 		ImageView imageView = new ImageView();
-		File file = new File("pictures/ball.png");
+		Label label = new Label();
+		File file = new File("pictures/Potatogram.jpg");
 		System.out.println("Index = " + index);
 		try {
 			BufferedImage bufferedImage = ImageIO.read(file);
@@ -73,8 +81,20 @@ public class AppController implements Initializable {
 		} catch (Exception e) {
 			System.out.println("Error: Exception found: " + e.getMessage());
 		}
+		
+		try {
+			label.setText("This is a test description");
+			label.setWrapText(true);
+			
+			
+		} catch (Exception e) {
+			System.out.println("Error: Exception found: " + e.getMessage());
+		}
+		
+		
 		VBox box = new VBox();
 		box.getChildren().add(imageView);
+		box.getChildren().add(label);
 		return box;
 		
 	}
@@ -103,13 +123,19 @@ public class AppController implements Initializable {
 					fxmlFile = this.getClass().getResource("/SigninAgain.fxml");
 					controller = new LoginController((CurrentUser)arg);
 					break;
+				case CONFIRMATION:
+					
+					break;
 			
 			}
+			
 			FXMLLoader loader = new FXMLLoader(fxmlFile);
 			loader.setController(controller);
 			Parent viewNode = loader.load();
 			rootPane.setCenter(viewNode);
 			rootPane.setTop(null);
+			Stage stage = (Stage) launch.getScene().getWindow();
+			stage.hide();
 		
 	}
 	@FXML
@@ -145,10 +171,6 @@ public class AppController implements Initializable {
 	public void initialize(URL location, ResourceBundle resource) {
 		products.setPageFactory((Integer index) -> createPage(index));
 		
-		
 	}
-	
-	
-	
 
 }

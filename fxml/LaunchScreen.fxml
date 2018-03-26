@@ -16,7 +16,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <AnchorPane prefHeight="173.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="launch" prefHeight="173.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="169.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);">
                <children>
@@ -27,7 +27,7 @@
             <Hyperlink fx:id="signin" layoutX="846.0" layoutY="17.0" onAction="#signIn" text="Log in" />
             <Button layoutX="934.0" layoutY="16.0" mnemonicParsing="false" onAction="#signUp" text="Register" textFill="#200bd6" />
             <Label />
-            <ImageView fitHeight="84.0" fitWidth="99.0" layoutX="13.0" layoutY="11.0">
+            <ImageView fx:id="logo" fitHeight="84.0" fitWidth="99.0" layoutX="13.0" layoutY="11.0">
                <image>
                   <Image url="@../pictures/potatocoLogo.png" />
                </image>
@@ -38,35 +38,31 @@
          </effect>
       </AnchorPane>
    </top>
+   <center>
+      <Pagination fx:id="products" maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="824.0" style="-fx-background-color: #FFF990;" />
+   </center>
+   <right>
+      <ListView fx:id="productScroll" fixedCellSize="3.0" opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #778899;" />
+   </right>
    <bottom>
       <SplitPane dividerPositions="0.3337, 0.6666" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Label layoutX="155.0" layoutY="71.0" text="HELP" />
+                  <Hyperlink fx:id="help" layoutX="152.0" layoutY="68.0" text="HELP" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="129.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="129.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Label layoutX="153.0" layoutY="71.0" text="FAQ" />
+                  <Hyperlink fx:id="faq" layoutX="152.0" layoutY="68.0" text="FAQ" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="158.0" prefWidth="386.0">
+            <AnchorPane prefHeight="158.0" prefWidth="386.0" SplitPane.resizableWithParent="false">
                <children>
-                  <Label layoutX="155.0" layoutY="71.0" text="SETTINGS" />
+                  <Hyperlink fx:id="settings" layoutX="139.0" layoutY="68.0" text="SETTINGS" />
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
    </bottom>
-   <center>
-      <Pane BorderPane.alignment="CENTER">
-         <children>
-            <Pagination fx:id="products" maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="824.0" style="-fx-background-color: #FFF990;" />
-         </children>
-      </Pane>
-   </center>
-   <right>
-      <ListView fixedCellSize="3.0" opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #778899;" BorderPane.alignment="CENTER" />
-   </right>
 </BorderPane>

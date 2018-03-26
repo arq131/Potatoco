@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <AnchorPane prefHeight="770.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <Ellipse fill="DODGERBLUE" layoutX="114.0" layoutY="112.0" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
-            <Hyperlink layoutX="356.0" layoutY="743.0" text="HELP" />
-            <Hyperlink layoutX="551.0" layoutY="744.0" text="SETTINGS" />
-            <Hyperlink layoutX="724.0" layoutY="743.0" text="FAQ" />
-            <TextField fx:id="userName" layoutX="462.0" layoutY="341.0" promptText="Username" />
-            <Button layoutX="555.0" layoutY="475.0" mnemonicParsing="false" onAction="#login" text="Sign In" />
-            <Button layoutX="462.0" layoutY="475.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-            <PasswordField fx:id="userPassword" layoutX="462.0" layoutY="400.0" promptText="Password" />
-            <Label fx:id="lblStatus" layoutX="462.0" layoutY="273.0" text="Status" textFill="#fa0606">
+            <TextField fx:id="userName" layoutX="426.0" layoutY="340.0" promptText="Username" />
+            <Button layoutX="522.0" layoutY="463.0" mnemonicParsing="false" onAction="#login" text="Sign In" />
+            <Button layoutX="426.0" layoutY="463.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+            <PasswordField fx:id="userPassword" layoutX="426.0" layoutY="399.0" promptText="Password" />
+            <Label fx:id="lblStatus" layoutX="481.0" layoutY="275.0" text="Status" textFill="#fa0606">
                <font>
                   <Font size="14.0" />
                </font>
@@ -35,7 +28,4 @@
          </effect>
       </AnchorPane>
    </top>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </bottom>
 </BorderPane>
