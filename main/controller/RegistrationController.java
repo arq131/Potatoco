@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -37,11 +38,14 @@ public class RegistrationController implements Initializable, MyController {
 	@FXML
 	private TextField input_username;
 	@FXML
-	private PasswordField input_password;
+	private TextField input_password;
 	@FXML
 	private Button submit;
 
 	private CurrentUser currentuser;
+	
+	@FXML
+	private Label lblStatus;
 
 	public RegistrationController(User user, CurrentUser currentuser) {
 		this.user = user;
@@ -55,7 +59,7 @@ public class RegistrationController implements Initializable, MyController {
 	void submitUser(ActionEvent event) throws Exception {
 		User user = new User();
 		CurrentUser currentuser = new CurrentUser();
-		user.setFirstName(input_first_name.getText());
+		/*user.setFirstName(input_first_name.getText());
 		user.setLastName(input_last_name.getText());
 		user.setGender(radioMale.getText());
 		user.setGender(radioFemale.getText());
@@ -63,9 +67,21 @@ public class RegistrationController implements Initializable, MyController {
 		user.seteMail(input_email.getText());
 		user.setPhoneNumber(input_phone.getText());
 		user.setUserName(input_username.getText());
-		user.setPassWord(input_password.getText());
-		AppController.getInstance().changeView(AppController.SIGNINAGAIN, currentuser);
-		
+		user.setPassWord(input_password.getText());*/
+		if(input_first_name.getText().equals("") || input_last_name.getText().equals("")) {
+			lblStatus.setText("All fields required");
+		}else if (radioMale.getText().equals("") || radioFemale.getText().equals("")){
+			lblStatus.setText("All fields required");
+		}else if (input_address.getText().equals("") || input_email.getText().equals("")) {
+			lblStatus.setText("All fields required");
+		}else if (input_phone.getText().equals("") || input_username.getText().equals("")) {
+			lblStatus.setText("All fields required");
+		}else if (input_password.getText().equals("")) {
+			lblStatus.setText("All fields required");
+		}
+		else {	
+			AppController.getInstance().changeView(AppController.SIGNEDOUT, currentuser);
+		}
 	}
 
 	@Override
