@@ -80,7 +80,7 @@ public class RegistrationController implements Initializable, MyController {
 			lblStatus.setText("All fields required");
 		}
 		else {	
-			AppController.getInstance().changeView(AppController.SIGNEDIN, currentuser);
+			AppController.getInstance().changeView(AppController.SIGNEDIN, user);
 		}
 	}
 
