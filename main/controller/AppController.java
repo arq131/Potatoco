@@ -112,7 +112,7 @@ public class AppController implements Initializable {
 					break;
 				case HOME:
 					fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
-					
+					controller = new LoginController((CurrentUser)arg);
 					break;
 				case LOGIN:
 					fxmlFile = this.getClass().getResource("/LoggedinView.fxml");
@@ -145,8 +145,8 @@ public class AppController implements Initializable {
 			Parent viewNode = loader.load();
 			rootPane.setCenter(viewNode);
 			rootPane.setTop(null);
-			//Stage stage = (Stage) launch.getScene().getWindow();
-			//stage.hide();
+			Stage stage = (Stage) launch.getScene().getWindow();
+			stage.hide();
 		
 	}
 	@FXML
