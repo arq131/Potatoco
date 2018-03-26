@@ -34,7 +34,7 @@ public class LoginController implements Initializable, MyController {
 	@FXML
 	public void login(ActionEvent event) throws Exception {
 		if(userName.getText().equals("user") && userPassword.getText().equals("pass")) {
-			AppController.getInstance().changeView(AppController.SIGNEDOUT, currentuser);
+			AppController.getInstance().changeView(AppController.SIGNEDIN, currentuser);
 		}
 		else {
 			lblStatus.setText("Login Failed");

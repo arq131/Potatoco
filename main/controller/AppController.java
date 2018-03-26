@@ -41,6 +41,7 @@ public class AppController implements Initializable {
 	public static final int SIGNINAGAIN = 5;
 	public static final int CONFIRMATION = 6;
 	public static final int VIEWCART = 7;
+	public static final int SIGNEDIN = 8;
 	private BorderPane rootPane = null;
 	public int state = 0;
 	
@@ -111,7 +112,7 @@ public class AppController implements Initializable {
 					break;
 				case HOME:
 					fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
-					controller = new RegistrationController((User)arg, null);
+					
 					break;
 				case LOGIN:
 					fxmlFile = this.getClass().getResource("/LoggedinView.fxml");
@@ -132,6 +133,10 @@ public class AppController implements Initializable {
 					fxmlFile = this.getClass().getResource("/CartView.fxml");
 					controller = new CartController((Cart)arg);
 					break;
+				case SIGNEDIN:
+					fxmlFile = this.getClass().getResource("/ProductsView.fxml");
+					controller = new LoginController((CurrentUser)arg);
+					break;
 			
 			}
 			
@@ -140,8 +145,8 @@ public class AppController implements Initializable {
 			Parent viewNode = loader.load();
 			rootPane.setCenter(viewNode);
 			rootPane.setTop(null);
-			Stage stage = (Stage) launch.getScene().getWindow();
-			stage.hide();
+			//Stage stage = (Stage) launch.getScene().getWindow();
+			//stage.hide();
 		
 	}
 	@FXML
