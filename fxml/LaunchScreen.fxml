@@ -16,12 +16,12 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <AnchorPane fx:id="launch" prefHeight="173.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="launch" prefHeight="109.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="169.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);">
                <children>
                   <Separator layoutX="810.0" layoutY="53.0" prefWidth="200.0" />
-                  <Button fx:id="buy" layoutX="913.0" layoutY="72.0" mnemonicParsing="false" onAction="#viewCart" prefHeight="43.0" prefWidth="80.0" style="-fx-background-image: url('C:\Users\Lamak\git\Potatoco\pictures\cart.png');" text="Cart" />
+                  <Button fx:id="buy" layoutX="921.0" layoutY="100.0" mnemonicParsing="false" onAction="#viewCart" prefHeight="43.0" prefWidth="80.0" style="-fx-background-image: url('C:\Users\Lamak\git\Potatoco\pictures\cart.png');" text="Cart" />
                </children>
             </Pane>
             <Hyperlink fx:id="signin" layoutX="846.0" layoutY="17.0" onAction="#signIn" text="Log in" />
@@ -45,21 +45,21 @@
       <ListView fx:id="productScroll" fixedCellSize="3.0" opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #778899;" />
    </right>
    <bottom>
-      <SplitPane dividerPositions="0.3337, 0.6666" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.3337, 0.6666" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Hyperlink fx:id="help" layoutX="152.0" layoutY="68.0" text="HELP" />
+                  <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="129.0" SplitPane.resizableWithParent="false">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                <children>
-                  <Hyperlink fx:id="faq" layoutX="152.0" layoutY="68.0" text="FAQ" />
+                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="158.0" prefWidth="386.0" SplitPane.resizableWithParent="false">
+            <AnchorPane prefHeight="158.0" prefWidth="386.0">
                <children>
-                  <Hyperlink fx:id="settings" layoutX="139.0" layoutY="68.0" text="SETTINGS" />
+                  <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" />
                </children>
             </AnchorPane>
         </items>
