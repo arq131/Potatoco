@@ -13,18 +13,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <AnchorPane prefHeight="173.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="169.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);">
+            <Pane prefHeight="169.0" prefWidth="1024.0" style="-fx-background-color: #fff3e1;">
                <children>
                   <Separator layoutX="810.0" layoutY="53.0" prefWidth="200.0" />
                </children>
             </Pane>
             <Label />
-            <ImageView fitHeight="84.0" fitWidth="99.0" layoutX="13.0" layoutY="11.0" onMousePressed="#back">
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="5.0" layoutY="5.0" onMousePressed="#back">
                <image>
                   <Image url="@../pictures/potatocoLogo.png" />
                </image>
@@ -36,31 +37,43 @@
       </AnchorPane>
    </top>
    <bottom>
-      <SplitPane dividerPositions="0.3337, 0.6666" minHeight="36.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.3337, 0.6666" minHeight="36.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;" BorderPane.alignment="CENTER">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" />
+                  <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="12.0" />
+                     </font></Hyperlink>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="129.0">
                <children>
-                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" />
+                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="12.0" />
+                     </font></Hyperlink>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="158.0" prefWidth="386.0">
                <children>
-                  <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" />
+                  <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="12.0" />
+                     </font></Hyperlink>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
    </bottom>
    <center>
-      <Pane BorderPane.alignment="CENTER">
+      <Pane style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <children>
             <ScrollPane prefHeight="511.0" prefWidth="825.0" />
-            <Button fx:id="purchaseIteams" layoutX="380.0" layoutY="519.0" mnemonicParsing="false" onAction="#purchase" text="Purchase" />
+            <Button fx:id="purchaseIteams" layoutX="365.0" layoutY="518.0" mnemonicParsing="false" onAction="#purchase" text="PURCHASE" textFill="#63211f">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font></Button>
          </children>
       </Pane>
    </center>

@@ -17,17 +17,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="768.0" minHeight="768.0" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="768.0" minHeight="768.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-alignment: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" VBox.vgrow="ALWAYS">
          <children>
-            <Pane layoutX="1.0" prefHeight="768.0" prefWidth="1023.0" style="-fx-background-color: #fffdd0;">
+            <Pane layoutX="1.0" prefHeight="768.0" prefWidth="1023.0" style="-fx-background-color: #fff3e1;">
                <children>
-                  <Accordion layoutX="25.0" layoutY="117.0" maxHeight="1024.0" prefHeight="582.0" prefWidth="650.0" style="-fx-background-color: #fff333;">
+                  <Accordion layoutX="187.0" layoutY="102.0" maxHeight="1024.0" prefHeight="565.0" prefWidth="650.0" style="-fx-background-color: #ccf6ff; -fx-border-color: #fac569; -fx-border-width: 5;">
                     <panes>
-                        <TitledPane fx:id="shipping" expanded="false" layoutX="10.0" layoutY="10.0" maxHeight="1024.0" minWidth="-Infinity" prefHeight="550.0" prefWidth="637.0" text="Shipping Address">
+                        <TitledPane fx:id="shipping" expanded="false" layoutX="10.0" layoutY="10.0" maxHeight="1024.0" minWidth="-Infinity" prefHeight="493.0" prefWidth="650.0" text="Shipping Address" textFill="#63211f">
                            <content>
-                              <AnchorPane maxHeight="1024.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0">
+                              <AnchorPane maxHeight="1024.0" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0" style="-fx-background-color: #ccf6ff;">
                                  <children>
                                     <TextField layoutX="15.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="First Name">
                                        <opaqueInsets>
@@ -56,10 +56,13 @@
                                  </children>
                               </AnchorPane>
                            </content>
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
                         </TitledPane>
-                        <TitledPane expanded="false" maxHeight="1024.0" minWidth="-Infinity" prefHeight="550.0" prefWidth="637.0" text="Billing Address">
+                        <TitledPane expanded="false" maxHeight="1024.0" minWidth="-Infinity" prefHeight="550.0" prefWidth="637.0" text="Billing Address" textFill="#63211f">
                            <content>
-                              <AnchorPane fx:id="billing" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0">
+                              <AnchorPane fx:id="billing" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="635.0" style="-fx-background-color: #ccf6ff;">
                                  <children>
                                     <TextField layoutX="15.0" layoutY="48.0" opacity="0.75" prefHeight="25.0" prefWidth="175.0" promptText="First Name">
                                        <opaqueInsets>
@@ -88,10 +91,13 @@
                                  </children>
                               </AnchorPane>
                            </content>
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
                         </TitledPane>
-                        <TitledPane fx:id="payment" expanded="false" maxHeight="1024.0" prefHeight="387.0" prefWidth="669.0" text="Payment Method">
+                        <TitledPane fx:id="payment" expanded="false" maxHeight="1024.0" prefHeight="387.0" prefWidth="669.0" text="Payment Method" textFill="#63211f">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="635.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="635.0" style="-fx-background-color: #ccf6ff;">
                                  <children>
                                     <TextArea layoutX="146.0" layoutY="165.0" opacity="0.75" prefHeight="200.0" prefWidth="348.0" text="WORK IN PROGRESS&#10;&#10;meanwhile, enjoy the free products &#10;&#10;:^)">
                                        <font>
@@ -101,30 +107,41 @@
                                  </children>
                               </AnchorPane>
                           </content>
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
                         </TitledPane>
                     </panes>
                   </Accordion>
-                  <Pane fx:id="receipt" layoutX="715.0" layoutY="76.0" prefHeight="550.0" prefWidth="262.0" style="-fx-background-color: #d3d3d3;" />
-                  <ImageView fx:id="logo" fitHeight="56.0" fitWidth="63.0" layoutX="11.0" layoutY="11.0" onMouseReleased="#back">
+                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="5.0" layoutY="5.0" onMousePressed="#back">
                      <image>
                         <Image url="@../pictures/potatocoLogo.png" />
                      </image>
                   </ImageView>
-                  <SplitPane dividerPositions="0.3337, 0.6666" layoutY="735.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to left, #fffdd0, #ffffff, #fffdd0);">
+                  <SplitPane dividerPositions="0.3337, 0.6666" layoutY="735.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;">
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" />
+                              <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" textFill="#63211f">
+                                 <font>
+                                    <Font name="Times New Roman" size="12.0" />
+                                 </font></Hyperlink>
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                            <children>
-                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" />
+                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" textFill="#63211f">
+                                 <font>
+                                    <Font name="Times New Roman" size="12.0" />
+                                 </font></Hyperlink>
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="158.0" prefWidth="386.0">
                            <children>
-                              <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" />
+                              <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" textFill="#63211f">
+                                 <font>
+                                    <Font name="Times New Roman" size="12.0" />
+                                 </font></Hyperlink>
                            </children>
                         </AnchorPane>
                      </items>
