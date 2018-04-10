@@ -26,10 +26,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import model.Cart;
 import model.CurrentUser;
 import model.User;
-import products.Cart;
-import products.Product;
+import model.Product;
 import javafx.fxml.*;
 
 public class AppController implements Initializable, MyController {
@@ -75,7 +75,7 @@ public class AppController implements Initializable, MyController {
 		ImageView imageView = new ImageView();
 		Label name = new Label();
 		Label cost = new Label();
-		File file = new File(product.getPic());
+		File file = new File(product.getImagePath());
 		System.out.println("Index = " + index);
 		try {
 			BufferedImage bufferedImage = ImageIO.read(file);

@@ -16,6 +16,7 @@ public class User implements MyController, Initializable {
 	private String phoneNumber;
 	private String userName;
 	private String passWord;
+	private Cart cart;
 	
 	public User(String firstName, String lastName, String gender, String address, 
 			String eMail, String phoneNumber, String userName, String passWord) {
@@ -27,6 +28,7 @@ public class User implements MyController, Initializable {
 		this.phoneNumber = new String(phoneNumber);
 		this.userName = new String(userName);
 		this.passWord = new String(passWord);
+		this.cart = new Cart();
 		
 	}
 	public User() {

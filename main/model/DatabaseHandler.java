@@ -5,7 +5,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import org.junit.Assert;
 
 public class DatabaseHandler {
 	private Connection con;
@@ -32,7 +38,7 @@ public class DatabaseHandler {
 			}
 		}
 
-		public String get(String key) {
+		protected String get(String key) {
 			return hash.get(key);
 		}
 	}
@@ -51,9 +57,8 @@ public class DatabaseHandler {
 			String password = dbInfo.get("password");
 			String hostname = dbInfo.get("hostname");
 			String port = dbInfo.get("port");
-			String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + username + "&password="
-					+ password;
-			this.con = DriverManager.getConnection(jdbcUrl);
+			String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName;
+			this.con = DriverManager.getConnection(jdbcUrl, username, password);
 			if (con != null) {
 				System.out.println("Connection successful!");
 				return true;
@@ -63,6 +68,64 @@ public class DatabaseHandler {
 			return false;
 		}
 		return false;
+	}
+	
+	/**
+	 * Stop the current connection to the database
+	 */
+	public void stop() throws SQLException {
+		if (this.con != null)
+			con.close();
+	}
+	
+	/**
+	 * Query the database to get a list of all the products
+	 * @return
+	 */
+	public ArrayList<Product> getAllProducts() {
+		ArrayList<Product> products = new ArrayList<Product>();
+		Statement stmt = null;
+		String query = "SELECT * FROM potatoco.products";
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				Product product = new Product(rs.getInt("id"));
+				product.setCost(rs.getDouble("cost"));
+				product.setDescription(rs.getString("description"));
+				product.setImagePath(rs.getString("path"));
+				product.setTag(rs.getString("tag"));
+				product.setName(rs.getString("name"));
+				products.add(product);
+			}
+			stmt.close();
+		} catch (Exception e) {
+			
+		}
+		
+		return products;
+	}
+	
+	/**
+	 * This will add a product into the database
+	 * @param product
+	 */
+	public boolean addProduct(Product product) {
+		try {
+			Statement stmt = con.createStatement();
+			String query = "INSERT INTO products (name, cost, description, path, tags) VALUES ('"
+					+ product.getName() + "', " + product.getCost() + ", '"
+					+ product.getDescription() + "', '" + product.getImagePath() + "', '"
+					+ product.getTag() + "')";
+			stmt.executeQuery(query);
+			System.out.println("Successfully inserted product into database");
+			stmt.close();
+			return true;
+		} catch (Exception e) {
+			Assert.fail("Unable to insert product into database. Error: " + e.getMessage());
+		}
+		return false;
+		
 	}
 
 }

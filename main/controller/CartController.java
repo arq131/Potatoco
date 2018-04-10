@@ -13,8 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import model.Cart;
 import model.CurrentUser;
-import products.Cart;
 import controller.AppController;
 
 public class CartController implements Initializable, MyController {
