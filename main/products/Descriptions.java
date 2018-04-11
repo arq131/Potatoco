@@ -3,6 +3,8 @@ package products;
 import java.util.Random;
 
 public class Descriptions {
+	private static Descriptions single_instance=null;
+	
     public String[] names = new String[1000];
     public String[] pics = new String[1000];
     public String[] descriptions = new String[1000];
@@ -33,7 +35,17 @@ public class Descriptions {
         descriptions[1] = "Have you ever wanted to send a message to someone in a meaningful way but mail,\n" +
                 " email and text messaging feels too bland and without enough potatos? well here comes the\n" +
                 " Potatogram. Personalize your message and show your love for potatos at the same time";
-        Random r = new Random();
+        names[2] = "Potato Leggins";
+        pics[2] = "pictures/potato_legging.jpg";
+        descriptions[2] = "Do you want to look great for your potato-locing significant other; pr dp you just want to feel confortable"
+        		+ "as you let your love for potatoes hug your legs? well potato leggings are here";
+        names[3] = "Potato Emoji Stickers";
+        pics[3] = "pictures/potato_emojis.jpg";
+        descriptions[3] = "Express your mood as you proclaim your fascination for potatoes with this adorable potato emoji stickers ";
+        names[4] = "I-potato Case";
+        pics[4] = "pictures/Iphone_case.jpg";
+        descriptions[4] = "Express your mood as you proclaim your fascination for potatoes with this adorable potato emoji stickers ";
+        //Random r = new Random();
         cost[0] = 8.55;
         cost[1] = 7.35;
     }
