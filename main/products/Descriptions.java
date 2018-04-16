@@ -44,7 +44,7 @@ public class Descriptions {
         descriptions[3] = "Express your mood as you proclaim your fascination for potatoes with this adorable potato emoji stickers ";
         names[4] = "I-potato Case";
         pics[4] = "pictures/Iphone_case.jpg";
-        descriptions[4] = "Express your mood as you proclaim your fascination for potatoes with this adorable potato emoji stickers ";
+        descriptions[4] = " ";
         //Random r = new Random();
         cost[0] = 8.55;
         cost[1] = 7.35;
