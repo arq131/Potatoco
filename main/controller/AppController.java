@@ -1,8 +1,13 @@
 package controller;
 
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
@@ -46,8 +51,10 @@ public class AppController implements Initializable, MyController {
 	public static final int SIGNEDIN = 8;
 	private Pane rootPane = null;
 	public int state = 0;
-
-	File images[];
+	private User user;
+	public ProductsInfo productsInfo;
+	
+	ArrayList<File> images;
 
 	@FXML
 	public Pagination products;
@@ -57,6 +64,56 @@ public class AppController implements Initializable, MyController {
 
 	private AppController() {
 
+	}
+	
+	/**
+	 * Class to handle reading products from csv file
+	 * @author Lamak
+	 *
+	 */
+	private class ProductsInfo {
+		private LinkedHashMap<String, Product> hash = new LinkedHashMap<String, Product>();
+
+		public ProductsInfo(File file) {
+			read(file);
+		}
+
+		private void read(File file) {
+			try {
+				String input;
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				br.readLine(); // Skip first line of csv
+				while ((input = br.readLine()) != null) {
+					String[] inputs = input.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+					for (int i = 0; i < 6; i++) {
+						if (inputs[i].equals("")) {
+							inputs[i] = "-1";
+						}
+					}
+					Product product = new Product(Integer.parseInt(inputs[0]), inputs[1], Double.parseDouble(inputs[2].replaceAll("[$]", "")), inputs[3], inputs[4], inputs[5]);
+					hash.put(inputs[0], product);
+				}
+				br.close();
+			} catch (Exception e) {
+				System.out.println("Unable to read file. Exception: " + e.getMessage());
+			}
+		}
+		
+		/* Get a product by key (id of product) */
+		protected Product get(String key) {
+			return hash.get(key);
+		}
+		
+		/* Get a product by the index of the product */
+		protected Product getByIndex(int index) {
+			return hash.get((hash.keySet().toArray())[index]);
+		}
+		
+		/* Check if a certain product id exists */
+		protected boolean isExist(String productName) {
+			return hash.containsKey(productName);
+		}
+		
 	}
 
 	@FXML
@@ -71,17 +128,17 @@ public class AppController implements Initializable, MyController {
 	}
 
 	public VBox createPage(int index) {
-		Product product = new Product(index);
+		Product product = productsInfo.getByIndex(index);
 		ImageView imageView = new ImageView();
 		Label name = new Label();
 		Label cost = new Label();
 		File file = new File(product.getImagePath());
-		System.out.println("Index = " + index);
 		try {
 			BufferedImage bufferedImage = ImageIO.read(file);
 			Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 			imageView.setImage(image);
 			imageView.setFitWidth(400);
+			imageView.setFitHeight(400);
 			imageView.setPreserveRatio(true);
 			imageView.setSmooth(true);
 			imageView.setCache(true);
@@ -121,15 +178,15 @@ public class AppController implements Initializable, MyController {
 			break;
 		case LOGIN:
 			fxmlFile = this.getClass().getResource("/LoggedinView.fxml");
-			controller = new LoginController((CurrentUser) arg);
+			controller = new LoginController((User) arg);
 			break;
 		case SIGNEDOUT:
 			fxmlFile = this.getClass().getResource("/ProductsView.fxml");
-			controller = new LoginController((CurrentUser) arg);
+			controller = new LoginController((User) arg);
 			break;
 		case SIGNINAGAIN:
 			fxmlFile = this.getClass().getResource("/SigninAgain.fxml");
-			controller = new LoginController((CurrentUser) arg);
+			controller = new LoginController((User) arg);
 			break;
 		case CONFIRMATION:
 			fxmlFile = this.getClass().getResource("/confirmPurchase.fxml");
@@ -189,10 +246,10 @@ public class AppController implements Initializable, MyController {
 		return myInstance;
 	}
 
-	public static AppController getInstance(User user) {
+	public AppController getInstance(User user) {
 		if (myInstance == null)
 			myInstance = new AppController();
-		// do something with user
+		this.user = user;
 		return myInstance;
 	}
 
@@ -206,7 +263,14 @@ public class AppController implements Initializable, MyController {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resource) {
+		productsInfo = new ProductsInfo(new File("products.csv"));
+		images = new ArrayList<File>();
+		int i = 0;
+		for (Product product : productsInfo.hash.values()) {
+			images.add(new File(product.getImagePath()));
+		}
 		products.setPageFactory((Integer index) -> createPage(index));
+		
 
 	}
 

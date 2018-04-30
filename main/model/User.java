@@ -12,97 +12,90 @@ public class User implements MyController, Initializable {
 	private String lastName;
 	private String gender;
 	private String address;
-	private String eMail;
+	private String email;
 	private String phoneNumber;
-	private String userName;
-	private String passWord;
+	private String username;
+	private String password;
 	private Cart cart;
 	
-	public User(String firstName, String lastName, String gender, String address, 
-			String eMail, String phoneNumber, String userName, String passWord) {
+	public User(String username, String password, String gender, String address,
+			String email, String phoneNumber, String firstName, String lastName) {
 		this.firstName = new String(firstName);
 		this.lastName = new String(lastName);
 		this.gender = new String(gender);
 		this.address = new String(address);
-		this.eMail = new String(eMail);
+		this.email = new String(email);
 		this.phoneNumber = new String(phoneNumber);
-		this.userName = new String(userName);
-		this.passWord = new String(passWord);
+		this.username = new String(username);
+		this.password = new String(password);
 		this.cart = new Cart();
 		
 	}
+	
 	public User() {
 		this("", "", "", "", "", "", "", "");
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String geteMail() {
-		return eMail;
+	
+	public String getEmail() {
+		return email;
 	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+	
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
+	
 	public String getPassWord() {
-		return passWord;
+		return password;
 	}
 	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+		this.password = passWord;
 	}
-	public String firstName() {
-		return firstName;
+	
+	public Cart getCart() {
+		return this.cart;
 	}
-	public String lastName() {
-		return lastName;
-	}
-	public String gender() {
-		return gender;
-	}
-	public String eMail() {
-		return eMail;
-	}
-	public String phoneNumber() {
-		return phoneNumber;
-	}
-	public String userName() {
-		return userName;
-	}
-	public String passWord() {
-		return passWord;
-	}
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
