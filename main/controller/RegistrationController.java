@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,15 +44,13 @@ public class RegistrationController implements Initializable, MyController {
 	private TextField input_password;
 	@FXML
 	private Button submit;
-
-	private CurrentUser currentuser;
-	
 	@FXML
 	private Label lblStatus;
+	
+	private boolean selected = false;
 
-	public RegistrationController(User user, CurrentUser currentuser) {
+	public RegistrationController(User user) {
 		this.user = user;
-		this.currentuser = currentuser;
 	}
 
 	public RegistrationController() {
@@ -58,16 +59,7 @@ public class RegistrationController implements Initializable, MyController {
 	@FXML
 	void submitUser(ActionEvent event) throws Exception {
 		User user = new User();
-		CurrentUser currentuser = new CurrentUser();
-		/*user.setFirstName(input_first_name.getText());
-		user.setLastName(input_last_name.getText());
-		user.setGender(radioMale.getText());
-		user.setGender(radioFemale.getText());
-		user.setAddress(input_address.getText());
-		user.seteMail(input_email.getText());
-		user.setPhoneNumber(input_phone.getText());
-		user.setUserName(input_username.getText());
-		user.setPassWord(input_password.getText());*/
+
 		if(input_first_name.getText().equals("") || input_last_name.getText().equals("")) {
 			lblStatus.setText("All fields required");
 		}else if (radioMale.getText().equals("") || radioFemale.getText().equals("")){
@@ -78,10 +70,39 @@ public class RegistrationController implements Initializable, MyController {
 			lblStatus.setText("All fields required");
 		}else if (input_password.getText().equals("")) {
 			lblStatus.setText("All fields required");
-		}
-		else {	
+		} else {
+			String firstName = input_first_name.getText();
+			String lastName = input_last_name.getText();
+			String gender = radioMale.isSelected() ? "male" : "female";
+			String address = input_address.getText();
+			String email = input_email.getText();
+			String phoneNumber = input_phone.getText();
+			String username = input_username.getText();
+			String password = input_password.getText();
+			
+			File file = new File("users.csv");
+			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			String data = username + "," + password + "," + gender + "," + address + "," + email + "," + phoneNumber + "," + firstName + "," + lastName + "\n";
+			
+			bw.write(data);
+			bw.close();
+			fw.close();
 			AppController.getInstance().changeView(AppController.SIGNEDIN, user);
 		}
+	}
+	
+	@FXML
+	public void checkGenderMale(ActionEvent event) {
+		radioMale.setSelected(true);
+		radioFemale.setSelected(false);
+	}
+	
+	@FXML
+	public void checkGenderFemale(ActionEvent event) {
+		radioMale.setSelected(false);
+		radioFemale.setSelected(true);
 	}
 	
 	@FXML

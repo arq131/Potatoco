@@ -170,7 +170,7 @@ public class AppController implements Initializable, MyController {
 		switch (viewType) {
 		case REGISTRATION:
 			fxmlFile = this.getClass().getResource("/RegistrationView.fxml");
-			controller = new RegistrationController((User) arg, null);
+			controller = new RegistrationController((User) arg);
 			break;
 		case HOME:
 			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
