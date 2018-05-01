@@ -83,6 +83,16 @@ public class RegistrationController implements Initializable, MyController {
 			AppController.getInstance().changeView(AppController.SIGNEDIN, user);
 		}
 	}
+	
+	@FXML
+	public void cancel(ActionEvent event) throws Exception {
+		AppController.getInstance().changeView(AppController.HOME, user);
+	}
+	
+	@FXML
+	public void login(ActionEvent event) throws Exception {
+		AppController.getInstance().changeView(AppController.LOGIN, user);
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

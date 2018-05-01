@@ -95,9 +95,15 @@ public class LoginController implements Initializable, MyController {
 			lblStatus.setText("Login Failed");
 		}
 	}
+	
 	@FXML
 	public void cancel(ActionEvent event) throws Exception{
 		AppController.getInstance().changeView(AppController.HOME, user);
+	}
+	
+	@FXML
+	public void register(ActionEvent event) throws Exception {
+		AppController.getInstance().changeView(AppController.REGISTRATION, user);
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

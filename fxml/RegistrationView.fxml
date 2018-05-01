@@ -88,17 +88,22 @@
                         </RadioButton>
                      </children>
                   </GridPane>
-                  <Button layoutX="276.0" layoutY="416.0" mnemonicParsing="false" onAction="#submitUser" text="Submit" textFill="#63211f">
+                  <Button layoutX="328.0" layoutY="415.0" mnemonicParsing="false" onAction="#submitUser" text="Submit" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font>
                   </Button>
-                  <Hyperlink layoutX="218.0" layoutY="496.0" text="already have an account?" />
+                  <Hyperlink layoutX="218.0" layoutY="496.0" onAction="#login" text="Already have an account?" />
                   <Label layoutX="202.0" layoutY="89.0" prefHeight="26.0" prefWidth="218.0" text="enter your information" textFill="#a77372">
                      <font>
                         <Font name="Sylfaen" size="22.0" />
                      </font>
                   </Label>
+                  <Button layoutX="187.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Return" textFill="#63211f">
+                     <font>
+                        <Font name="Sylfaen" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>
