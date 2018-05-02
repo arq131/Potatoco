@@ -244,9 +244,6 @@ public class AppController implements Initializable, MyController {
 			welcome.setVisible(true);
 			
 		}
-		// rootPane.setTop(null);
-		// Stage stage = (Stage) launch.getScene().getWindow();
-		// stage.hide();
 
 	}
 
