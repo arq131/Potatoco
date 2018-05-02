@@ -19,6 +19,8 @@ import javafx.application.*;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
@@ -53,6 +55,8 @@ public class AppController implements Initializable, MyController {
 	public int state = 0;
 	private User user;
 	public ProductsInfo productsInfo;
+	private boolean isLoggedIn = false;
+	private FXMLLoader loader;
 	
 	ArrayList<File> images;
 
@@ -61,6 +65,18 @@ public class AppController implements Initializable, MyController {
 
 	@FXML
 	public AnchorPane launch;
+	
+	@FXML
+	private Label welcome;
+	
+	@FXML
+	private Hyperlink signin;
+	
+	@FXML
+	private Button register;
+	
+	@FXML
+	private Button logout;
 
 	private AppController() {
 
@@ -167,6 +183,7 @@ public class AppController implements Initializable, MyController {
 	public void changeView(int viewType, Object arg) throws Exception {
 		MyController controller = null;
 		URL fxmlFile = null;
+		isLoggedIn = false;
 		switch (viewType) {
 		case REGISTRATION:
 			fxmlFile = this.getClass().getResource("/RegistrationView.fxml");
@@ -181,8 +198,11 @@ public class AppController implements Initializable, MyController {
 			controller = new LoginController((User) arg);
 			break;
 		case SIGNEDOUT:
-			fxmlFile = this.getClass().getResource("/ProductsView.fxml");
-			controller = new LoginController((User) arg);
+			signin.setVisible(true);
+			register.setVisible(true);
+			welcome.setVisible(false);
+			logout.setVisible(false);
+			//controller = new LoginController();
 			break;
 		case SIGNINAGAIN:
 			fxmlFile = this.getClass().getResource("/SigninAgain.fxml");
@@ -197,18 +217,30 @@ public class AppController implements Initializable, MyController {
 			controller = new CartController((Cart) arg);
 			break;
 		case SIGNEDIN:
+			this.user = (User) arg;
+			isLoggedIn = true;
 			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
-			controller = getInstance((User) arg);
+			controller = getInstance(user);
 			break;
 
 		}
+		if (fxmlFile != null) {
+			loader = new FXMLLoader(fxmlFile);
+			loader.setController(controller);
+			Parent viewNode = loader.load();
+			Scene scene = new Scene(viewNode, 1024, 768);
+			stage.setScene(scene);
+		}
 
-		FXMLLoader loader = new FXMLLoader(fxmlFile);
-		loader.setController(controller);
-		Parent viewNode = loader.load();
-		Scene scene = new Scene(viewNode, 1024, 768);
-		stage.setScene(scene);
-
+		if (isLoggedIn) {
+			signin.setVisible(false);
+			register.setVisible(false);
+			
+			logout.setVisible(true);
+			welcome.setText("Welcome, " + user.getFirstName());
+			welcome.setVisible(true);
+			
+		}
 		// rootPane.setTop(null);
 		// Stage stage = (Stage) launch.getScene().getWindow();
 		// stage.hide();
@@ -232,6 +264,8 @@ public class AppController implements Initializable, MyController {
 
 	@FXML
 	public void signOut(ActionEvent event) throws Exception {
+		System.out.println("Signing out...");
+		this.user = null;
 		changeView(SIGNEDOUT, null);
 	}
 
@@ -265,12 +299,10 @@ public class AppController implements Initializable, MyController {
 	public void initialize(URL location, ResourceBundle resource) {
 		productsInfo = new ProductsInfo(new File("products.csv"));
 		images = new ArrayList<File>();
-		int i = 0;
 		for (Product product : productsInfo.hash.values()) {
 			images.add(new File(product.getImagePath()));
 		}
 		products.setPageFactory((Integer index) -> createPage(index));
-		
 
 	}
 

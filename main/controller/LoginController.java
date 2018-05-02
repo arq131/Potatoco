@@ -41,7 +41,8 @@ public class LoginController implements Initializable, MyController {
 		private void read(File file) {
 			try {
 				String input;
-				BufferedReader br = new BufferedReader(new FileReader(file));
+				FileReader fr = new FileReader(file);
+				BufferedReader br = new BufferedReader(fr);
 				while ((input = br.readLine()) != null) {
 					String[] inputs = input.split(",");
 					User newUser = new User(inputs[0], inputs[1], inputs[2], inputs[3],
@@ -49,6 +50,7 @@ public class LoginController implements Initializable, MyController {
 					hash.put(inputs[0], newUser);
 				}
 				br.close();
+				fr.close();
 			} catch (Exception e) {
 				System.out.println("Unable to read file. Exception: " + e.getMessage());
 			}
