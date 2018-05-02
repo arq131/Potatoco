@@ -34,6 +34,21 @@
                   <Image url="@../pictures/potatocoLogo.png" />
                </image>
             </ImageView>
+            <Label alignment="CENTER" layoutX="-22.0" layoutY="-24.0" prefHeight="134.0" prefWidth="495.0" text="Potatoco" textAlignment="CENTER" textFill="#63211f">
+               <font>
+                  <Font name="Times New Roman" size="41.0" />
+               </font>
+            </Label>
+            <Label layoutX="184.0" layoutY="54.0" text="Buy the potato you" textFill="#a77372">
+               <font>
+                  <Font name="Times New Roman" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="210.0" layoutY="63.0" text="never knew you needed." textFill="#a77372">
+               <font>
+                  <Font name="Times New Roman Italic" size="23.0" />
+               </font>
+            </Label>
          </children>
          <effect>
             <Glow />

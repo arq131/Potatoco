@@ -113,7 +113,7 @@
                         </TitledPane>
                     </panes>
                   </Accordion>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="5.0" layoutY="5.0" onMousePressed="#back">
+                  <ImageView blendMode="SRC_ATOP" fitHeight="150.0" fitWidth="150.0" layoutX="4.0" layoutY="5.0" onMousePressed="#back" opacity="0.81">
                      <image>
                         <Image url="@../pictures/potatocoLogo.png" />
                      </image>
@@ -125,7 +125,8 @@
                               <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="6.0" text="FAQ" textFill="#63211f">
                                  <font>
                                     <Font name="Times New Roman" size="12.0" />
-                                 </font></Hyperlink>
+                                 </font>
+                              </Hyperlink>
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
@@ -144,11 +145,6 @@
                         <Font name="Times New Roman" size="15.0" />
                      </font>
                   </Button>
-                  <Label alignment="CENTER" layoutX="226.0" prefHeight="134.0" prefWidth="495.0" text="Potatoco" textAlignment="CENTER" textFill="#63211f">
-                     <font>
-                        <Font name="Times New Roman" size="41.0" />
-                     </font>
-                  </Label>
                   <Button fx:id="home" alignment="CENTER" layoutX="875.0" layoutY="175.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="48.0" prefWidth="109.0" text="HOME" textAlignment="CENTER" textFill="#63211f">
                      <font>
                         <Font name="Times New Roman" size="15.0" />
@@ -159,6 +155,21 @@
                         <Font name="Times New Roman" size="15.0" />
                      </font>
                   </Button>
+                  <Label alignment="CENTER" layoutX="-25.0" layoutY="-24.0" opacity="0.75" prefHeight="134.0" prefWidth="495.0" text="Potatoco" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="41.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="181.0" layoutY="54.0" opacity="0.75" text="Buy the potato you" textFill="#a77372">
+                     <font>
+                        <Font name="Times New Roman" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="207.0" layoutY="63.0" opacity="0.75" text="never knew you needed." textFill="#a77372">
+                     <font>
+                        <Font name="Times New Roman Italic" size="23.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>

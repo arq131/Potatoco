@@ -19,7 +19,7 @@
                <children>
                   <TextField fx:id="userName" layoutX="71.0" layoutY="125.0" prefHeight="25.0" prefWidth="188.0" promptText="Username" />
                   <PasswordField fx:id="userPassword" layoutX="71.0" layoutY="166.0" prefHeight="25.0" prefWidth="188.0" promptText="Password" />
-                  <Button fx:id="signin" layoutX="181.0" layoutY="213.0" mnemonicParsing="false" onAction="#login" text="Sign In" textFill="#63211f">
+                  <Button fx:id="signin" layoutX="130.0" layoutY="221.0" mnemonicParsing="false" onAction="#login" text="Sign In" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font></Button>
@@ -28,8 +28,8 @@
                         <Font name="Times New Roman Bold" size="28.0" />
                      </font>
                   </Label>
-                  <Hyperlink layoutX="100.0" layoutY="270.0" onAction="#register" text="Don't have an account?" />
-                  <Button fx:id="cancel" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" onAction="#cancel" text="Return" textFill="#63211f">
+                  <Hyperlink alignment="CENTER" layoutX="63.0" layoutY="304.0" onAction="#register" prefHeight="46.0" prefWidth="197.0" text="Don't have an account?" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="cancel" layoutX="131.0" layoutY="261.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font>

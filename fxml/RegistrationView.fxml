@@ -20,7 +20,7 @@
          <children>
             <Pane layoutX="226.0" layoutY="97.0" prefHeight="563.0" prefWidth="594.0" style="-fx-background-color: #c1f4ff; -fx-border-color: #fac569; -fx-border-width: 5;">
                <children>
-                  <Label fx:id="lblStatus" alignment="CENTER" layoutX="198.0" layoutY="70.0" text="REGISTRATION" textFill="#63211f">
+                  <Label fx:id="lblStatus" alignment="CENTER" layoutX="198.0" layoutY="70.0" opacity="0.77" text="REGISTRATION" textFill="#63211f">
                      <font>
                         <Font name="Times New Roman Bold" size="28.0" />
                      </font>
@@ -103,17 +103,17 @@
                         <PasswordField fx:id="input_password" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
-                  <Button layoutX="328.0" layoutY="415.0" mnemonicParsing="false" onAction="#submitUser" text="Submit" textFill="#63211f">
+                  <Button layoutX="258.0" layoutY="428.0" mnemonicParsing="false" onAction="#submitUser" text="Submit" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="187.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Return" textFill="#63211f">
+                  <Button layoutX="259.0" layoutY="466.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font>
                   </Button>
-                  <Hyperlink layoutX="218.0" layoutY="496.0" onAction="#login" text="Already have an account?" />
+                  <Hyperlink alignment="CENTER" layoutX="188.0" layoutY="497.0" onAction="#login" prefHeight="50.0" prefWidth="218.0" text="Already have an account?" textAlignment="CENTER" />
                   <Label layoutX="202.0" layoutY="89.0" prefHeight="26.0" prefWidth="218.0" text="enter your information" textFill="#a77372">
                      <font>
                         <Font name="Sylfaen" size="22.0" />
