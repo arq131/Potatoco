@@ -82,9 +82,6 @@
                         </Label>
                         <TextField fx:id="input_first_name" prefWidth="105.0" GridPane.columnIndex="1" />
                         <TextField fx:id="input_last_name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="input_address" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="input_phone" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField fx:id="input_email" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <RadioButton fx:id="radioMale" mnemonicParsing="false" onAction="#checkGenderMale" text="Male" textFill="#a77372" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Times New Roman" size="14.0" />
@@ -98,11 +95,19 @@
                               <Font name="Times New Roman" size="14.0" />
                            </font>
                         </RadioButton>
+                        <TextField fx:id="input_address" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="input_phone" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="input_email" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <TextField fx:id="input_username" layoutX="151.0" layoutY="147.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <TextField fx:id="input_password" layoutX="151.0" layoutY="180.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                   <Button layoutX="328.0" layoutY="415.0" mnemonicParsing="false" onAction="#submitUser" text="Submit" textFill="#63211f">
+                     <font>
+                        <Font name="Sylfaen" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="187.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Return" textFill="#63211f">
                      <font>
                         <Font name="Sylfaen" size="14.0" />
                      </font>
@@ -113,11 +118,6 @@
                         <Font name="Sylfaen" size="22.0" />
                      </font>
                   </Label>
-                  <Button layoutX="187.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Return" textFill="#63211f">
-                     <font>
-                        <Font name="Sylfaen" size="14.0" />
-                     </font>
-                  </Button>
                </children>
             </Pane>
          </children>

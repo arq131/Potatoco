@@ -16,6 +16,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -51,6 +52,9 @@ public class CartController implements Initializable, MyController {
 	
 	public void populateItems() {
 		int i = 0;
+		Node node = items.getChildren().get(0);
+		items.getChildren().clear();
+		items.getChildren().add(0, node);
 		for (Product product : cart.getProducts()) {
 			ImageView imageView = new ImageView();
 			File file = new File(product.getImagePath());
@@ -79,6 +83,7 @@ public class CartController implements Initializable, MyController {
 			remove.setText("REMOVE");
 			remove.setAlignment(Pos.CENTER);
 			remove.setOnAction(new EventHandler<ActionEvent>() {
+				
 				@Override
 				public void handle(ActionEvent e) {
 					cart.removeFromCart(product);
@@ -92,6 +97,7 @@ public class CartController implements Initializable, MyController {
 			items.add(remove, 3, i);
 			i++;
 		}
+
 		total.setText("Total Cost: " + String.format("$%.2f", cart.getCost()));
 	}
 

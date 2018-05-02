@@ -107,6 +107,16 @@
                   <Font name="Times New Roman" size="12.0" />
                </font>
             </Label>
+            <Label fx:id="itemName" alignment="CENTER" layoutX="35.0" layoutY="26.0" prefHeight="39.0" prefWidth="163.0" text="ItemName" textAlignment="CENTER" textFill="#61201f">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="itemPrice" alignment="CENTER" layoutX="79.0" layoutY="451.0" prefHeight="43.0" prefWidth="78.0" text="ItemPrice" textAlignment="CENTER" textFill="#61201f">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </right>

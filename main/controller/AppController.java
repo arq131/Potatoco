@@ -33,6 +33,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Duration;
@@ -85,6 +86,12 @@ public class AppController implements Initializable, MyController {
 	
 	@FXML
 	private Label productDesc;
+	
+	@FXML
+	private Label itemName;
+	
+	@FXML
+	private Label itemPrice;
 	
 	private AppController() {
 
@@ -186,7 +193,12 @@ public class AppController implements Initializable, MyController {
 		box.setAlignment(Pos.CENTER);
 		box.getChildren().add(imageView);
 		productDesc.setWrapText(true);
-		productDesc.setText(product.display());
+		productDesc.setText(product.getDescription());
+		productDesc.setAlignment(Pos.CENTER);
+		productDesc.setTextAlignment(TextAlignment.CENTER);
+		itemName.setWrapText(true);
+		itemName.setText(product.getName());
+		itemPrice.setText(String.format("$%.2f", product.getCost()));
 		//box.getChildren().add(cost);
 		return box;
 

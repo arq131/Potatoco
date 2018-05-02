@@ -28,6 +28,11 @@
                         <Font name="Times New Roman" size="15.0" />
                      </font>
                   </Button>
+                  <Label alignment="CENTER" layoutX="226.0" layoutY="18.0" prefHeight="134.0" prefWidth="495.0" text="Potatoco" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="41.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Label />
