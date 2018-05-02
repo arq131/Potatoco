@@ -25,7 +25,10 @@ public class Cart {
 	// removes product from cart; needs update after removal.
 	public void removeFromCart(Product product) {
 		cartProduct.remove(product);
-		this.totalCost -= product.getCost();
+		if (totalCost - product.getCost() < 0)
+			this.totalCost = 0;
+		else
+			this.totalCost -= product.getCost();
 		this.itemAmt--;
 	}
 
