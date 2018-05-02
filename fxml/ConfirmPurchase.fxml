@@ -118,11 +118,11 @@
                         <Image url="@../pictures/potatocoLogo.png" />
                      </image>
                   </ImageView>
-                  <SplitPane dividerPositions="0.3337, 0.6666" layoutY="735.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;">
+                  <SplitPane dividerPositions="0.3337" layoutY="735.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;">
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Hyperlink fx:id="help" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="HELP" textFill="#63211f">
+                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="6.0" text="FAQ" textFill="#63211f">
                                  <font>
                                     <Font name="Times New Roman" size="12.0" />
                                  </font></Hyperlink>
@@ -130,18 +130,11 @@
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                            <children>
-                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="6.0" text="FAQ" textFill="#63211f">
+                              <Label layoutX="24.0" layoutY="4.0" prefHeight="18.0" prefWidth="425.0" text="Potatoco is awesome. &lt;- change this lol" textFill="#63211f">
                                  <font>
                                     <Font name="Times New Roman" size="12.0" />
-                                 </font></Hyperlink>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="158.0" prefWidth="386.0">
-                           <children>
-                              <Hyperlink fx:id="settings" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="6.0" text="SETTINGS" textFill="#63211f">
-                                 <font>
-                                    <Font name="Times New Roman" size="12.0" />
-                                 </font></Hyperlink>
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </items>
