@@ -251,10 +251,12 @@ public class AppController implements Initializable, MyController {
 		case FAQ:
 			fxmlFile = this.getClass().getResource("/FaqView.fxml");
 			controller = new FAQController();
+			break;
 		case COMPLETE_PURCHASE:
 			user.getCart().resetCart();
 			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
 			controller = getInstance(user);
+			break;
 
 		}
 		if (fxmlFile != null) {
