@@ -57,6 +57,7 @@ public class AppController implements Initializable, MyController {
 	public static final int SIGNEDIN = 8;
 	public static final int FAQ = 9;
 	public static final int COMPLETE_PURCHASE = 10;
+	public static final int CONTACTUS = 11;
 	private Pane rootPane = null;
 	public int state = 0;
 	private User user;
@@ -257,6 +258,10 @@ public class AppController implements Initializable, MyController {
 			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
 			controller = getInstance(user);
 			break;
+		case CONTACTUS:
+			fxmlFile = this.getClass().getResource("/ContactusView.fxml");
+			controller = new FAQController();
+			break;
 
 		}
 		if (fxmlFile != null) {
@@ -305,7 +310,10 @@ public class AppController implements Initializable, MyController {
 	public void goToFAQ(ActionEvent event) throws Exception {
 		changeView(FAQ, null);
 	}
-
+	@FXML
+	public void goToContactUs(ActionEvent event) throws Exception {
+		changeView(CONTACTUS, null);
+	}
 	@FXML
 	public void viewCart(ActionEvent event) throws Exception {
 		Cart cart = null;

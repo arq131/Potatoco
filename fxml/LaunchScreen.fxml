@@ -82,11 +82,11 @@
       <Pagination fx:id="products" maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="824.0" style="-fx-background-color: #FFFFFF;" />
    </center>
    <bottom>
-      <SplitPane dividerPositions="0.3337" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.4863013698630137" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;" BorderPane.alignment="CENTER">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="147.0" layoutY="6.0" onAction="#goToFAQ" text="FAQ" textFill="#63211f">
+                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="4.0" onAction="#goToFAQ" text="FAQ" textFill="#63211f">
                      <font>
                         <Font name="Times New Roman" size="12.0" />
                      </font></Hyperlink>
@@ -94,11 +94,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                <children>
-                  <Label layoutY="8.0" prefHeight="18.0" prefWidth="425.0" text="Potatoco is awesome. &lt;- change this lol" textFill="#63211f">
-                     <font>
-                        <Font name="Times New Roman" size="12.0" />
-                     </font>
-                  </Label>
+                  <Hyperlink fx:id="contactus" layoutX="235.0" layoutY="6.0" onAction="#goToContactUs" text="CONTACT US" textFill="#63211f" />
                </children>
             </AnchorPane>
         </items>
