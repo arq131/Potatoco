@@ -44,6 +44,8 @@ public class LoginController implements Initializable, MyController {
 				FileReader fr = new FileReader(file);
 				BufferedReader br = new BufferedReader(fr);
 				while ((input = br.readLine()) != null) {
+					if (input.equals(""))
+						continue;
 					String[] inputs = input.split(",");
 					User newUser = new User(inputs[0], inputs[1], inputs[2], inputs[3],
 							 inputs[4], inputs[5], inputs[6], inputs[7]);

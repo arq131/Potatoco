@@ -11,11 +11,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.*;
 import model.CurrentUser;
 import model.User;
@@ -83,13 +85,19 @@ public class RegistrationController implements Initializable, MyController {
 			File file = new File("users.csv");
 			FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			
-			String data = username + "," + password + "," + gender + "," + address + "," + email + "," + phoneNumber + "," + firstName + "," + lastName + "\n";
+			bw.newLine();
+			String data = username + "," + password + "," + gender + "," + address + "," + email + "," + phoneNumber + "," + firstName + "," + lastName;
 			
 			bw.write(data);
+			
 			bw.close();
 			fw.close();
-			AppController.getInstance().changeView(AppController.SIGNEDIN, user);
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Success!");
+			alert.setHeaderText("Account created.");
+			alert.setContentText("Congratulations on creating a new account with us " + firstName + "!");
+			alert.showAndWait();
+			AppController.getInstance().changeView(AppController.HOME, user);
 		}
 	}
 	
