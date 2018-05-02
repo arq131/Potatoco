@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -23,15 +22,11 @@
                   <Font name="Sylfaen" size="22.0" />
                </font>
             </Label>
-            <ScrollPane hbarPolicy="NEVER" layoutX="102.0" layoutY="94.0" prefHeight="474.0" prefWidth="537.0" vbarPolicy="NEVER">
-               <content>
-                  <TextArea editable="false" prefHeight="474.0" prefWidth="537.0" text="Hello there! You may have some questions about the site. We've compiled a page of the most frequently asked questions as solutions to simple problems you may encounter to help you out.&#10;&#10;How do I create an account?&#10;On the top-right of the site page is a link labeled registration. Click the link to be redirected to the registration page. Fill out every field to create your own account!&#10;&#10;How do I log into my account?&#10;On the top-right of the site page is a button labeled 'Log In'. Click the button to be redirected to the login page. As long as you have registered an account with our site, you simply have to enter your username and password and you're all set!&#10;&#10;Uh-oh! I clicked the Log In button without creating an account first. What should I do?&#10;If you have not created an account with the site, worry not. On the login page is a link that will lead you to the registration page.&#10;&#10;How do I log out from my account?&#10;When logged in, you will notice that the site welcomes you by name and has a 'Log Out' button on the top-right of the screen. Click the button and you're all set!&#10;&#10;How do I add an item to my cart?&#10;When viewing an item: the item name, description, and price are available on the right-hand side of the item picture. Below that is a button that is titled 'Add to Cart'. Simply click the button and the item will be added to your cart.&#10;" wrapText="true">
-                     <font>
-                        <Font name="Sylfaen" size="13.0" />
-                     </font></TextArea>
-                                   
-               </content>
-            </ScrollPane>
+            <TextArea editable="false" layoutX="101.0" layoutY="94.0" prefHeight="474.0" prefWidth="537.0" style="-fx-background-color: #fff3e1; -fx-border-color: #fff3e1; -fx-border-width: 5;" text="Hello there! You may have some questions about the site. We've compiled a page of the most frequently asked questions as solutions to simple problems you may encounter to help you out.&#10;&#10;How do I create an account?&#10;On the top-right of the site page is a link labeled registration. Click the link to be redirected to the registration page. Fill out every field to create your own account!&#10;&#10;How do I log into my account?&#10;On the top-right of the site page is a button labeled 'Log In'. Click the button to be redirected to the login page. As long as you have registered an account with our site, you simply have to enter your username and password and you're all set!&#10;&#10;Uh-oh! I clicked the Log In button without creating an account first. What should I do?&#10;If you have not created an account with the site, worry not. On the login page is a link that will lead you to the registration page.&#10;&#10;How do I log out from my account?&#10;When logged in, you will notice that the site welcomes you by name and has a 'Log Out' button on the top-right of the screen. Click the button and you're all set!&#10;&#10;How do I add an item to my cart?&#10;When viewing an item: the item name, description, and price are available on the right-hand side of the item picture. Below that is a button that is titled 'Add to Cart'. Simply click the button and the item will be added to your cart.&#10;" wrapText="true">
+               <font>
+                  <Font name="Sylfaen" size="13.0" />
+               </font>
+            </TextArea>
          </children>
       </Pane>
    </children>
