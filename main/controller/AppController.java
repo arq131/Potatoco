@@ -54,6 +54,7 @@ public class AppController implements Initializable, MyController {
 	public static final int CONFIRMATION = 6;
 	public static final int VIEWCART = 7;
 	public static final int SIGNEDIN = 8;
+	public static final int FAQ = 9;
 	private Pane rootPane = null;
 	public int state = 0;
 	private User user;
@@ -234,6 +235,9 @@ public class AppController implements Initializable, MyController {
 			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
 			controller = getInstance(user);
 			break;
+		case FAQ:
+			fxmlFile = this.getClass().getResource("/FaqView.fxml");
+			controller = new FAQController();
 
 		}
 		if (fxmlFile != null) {
@@ -276,6 +280,11 @@ public class AppController implements Initializable, MyController {
 		System.out.println("Signing out...");
 		this.user = null;
 		changeView(SIGNEDOUT, null);
+	}
+	
+	@FXML
+	public void goToFAQ(ActionEvent event) throws Exception {
+		changeView(FAQ, null);
 	}
 
 	@FXML
