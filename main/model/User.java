@@ -95,6 +95,10 @@ public class User implements MyController, Initializable {
 	public Cart getCart() {
 		return this.cart;
 	}
+	
+	public void addToCart(Product product) {
+		this.cart.addToCart(product);
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

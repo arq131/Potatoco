@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 import javax.imageio.ImageIO;
 
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.*;
@@ -59,6 +60,7 @@ public class AppController implements Initializable, MyController {
 	public ProductsInfo productsInfo;
 	private boolean isLoggedIn = false;
 	private FXMLLoader loader;
+	private Product currentProduct;
 	
 	ArrayList<File> images;
 
@@ -150,6 +152,7 @@ public class AppController implements Initializable, MyController {
 
 	public VBox createPage(int index) {
 		Product product = productsInfo.getByIndex(index);
+		currentProduct = product;
 		ImageView imageView = new ImageView();
 		Label name = new Label();
 		Label cost = new Label();
@@ -178,9 +181,12 @@ public class AppController implements Initializable, MyController {
 		}
 
 		VBox box = new VBox();
-		box.getChildren().add(imageView);
 		box.getChildren().add(name);
-		box.getChildren().add(cost);
+		box.setAlignment(Pos.CENTER);
+		box.getChildren().add(imageView);
+		productDesc.setWrapText(true);
+		productDesc.setText(product.display());
+		//box.getChildren().add(cost);
 		return box;
 
 	}
@@ -290,7 +296,19 @@ public class AppController implements Initializable, MyController {
 	
 	@FXML
 	public void addToCart(ActionEvent event) throws Exception {
-		
+		Alert alert = new Alert(AlertType.WARNING);
+		if (user != null) {
+			user.addToCart(currentProduct);
+			alert.setTitle("Added!");
+			alert.setHeaderText("Successfully added " + currentProduct.getName() + " to your cart.");
+			alert.setContentText("Current cost of cart: " + String.format("$%.2f", user.getCart().getCost()));
+			alert.showAndWait();
+		} else {
+			alert.setTitle("Sorry!");
+			alert.setHeaderText("Unable to add to cart.");
+			alert.setContentText("Please login/register before adding your cart!");
+			alert.showAndWait();
+		}
 	}
 
 	public static AppController getInstance() {

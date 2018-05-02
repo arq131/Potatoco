@@ -69,4 +69,8 @@ public class Product {
 		this.tag = tag;
 	}
 	
+	public String display() {
+		return this.description + "\n\n\n" + String.format("$%.2f",  this.cost);
+	}
+	
 }
