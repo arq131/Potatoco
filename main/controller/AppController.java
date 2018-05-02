@@ -79,7 +79,10 @@ public class AppController implements Initializable, MyController {
 	
 	@FXML
 	private Button logout;
-
+	
+	@FXML
+	private Label productDesc;
+	
 	private AppController() {
 
 	}
@@ -282,6 +285,11 @@ public class AppController implements Initializable, MyController {
 			alert.setContentText("Please login/register before viewing your cart!");
 			alert.showAndWait();
 		}
+		
+	}
+	
+	@FXML
+	public void addToCart(ActionEvent event) throws Exception {
 		
 	}
 
