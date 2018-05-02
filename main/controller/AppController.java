@@ -24,6 +24,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -183,7 +185,7 @@ public class AppController implements Initializable, MyController {
 	public void changeView(int viewType, Object arg) throws Exception {
 		MyController controller = null;
 		URL fxmlFile = null;
-		isLoggedIn = false;
+		
 		switch (viewType) {
 		case REGISTRATION:
 			fxmlFile = this.getClass().getResource("/RegistrationView.fxml");
@@ -202,6 +204,7 @@ public class AppController implements Initializable, MyController {
 			register.setVisible(true);
 			welcome.setVisible(false);
 			logout.setVisible(false);
+			isLoggedIn = false;
 			//controller = new LoginController();
 			break;
 		case SIGNINAGAIN:
@@ -271,7 +274,18 @@ public class AppController implements Initializable, MyController {
 
 	@FXML
 	public void viewCart(ActionEvent event) throws Exception {
-		changeView(VIEWCART, null);
+		Cart cart = null;
+		if (user != null) {
+			cart = user.getCart();
+			changeView(VIEWCART, cart);
+		} else {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Sorry!");
+			alert.setHeaderText("Unable to view cart.");
+			alert.setContentText("Please login/register before viewing your cart!");
+			alert.showAndWait();
+		}
+		
 	}
 
 	public static AppController getInstance() {
