@@ -82,19 +82,23 @@
       <Pagination fx:id="products" maxPageIndicatorCount="5" pageCount="50" prefHeight="435.0" prefWidth="824.0" style="-fx-background-color: #FFFFFF;" />
    </center>
    <bottom>
-      <SplitPane dividerPositions="0.4863013698630137" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.5" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="34.0" prefWidth="306.0">
                <children>
-                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="4.0" onAction="#goToFAQ" text="FAQ" textFill="#63211f">
+                  <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="234.0" layoutY="4.0" onAction="#goToFAQ" text="FAQ" textFill="#63211f">
                      <font>
-                        <Font name="Times New Roman" size="12.0" />
+                        <Font name="Sylfaen" size="15.0" />
                      </font></Hyperlink>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                <children>
-                  <Hyperlink fx:id="contactus" layoutX="235.0" layoutY="6.0" onAction="#goToContactUs" text="CONTACT US" textFill="#63211f" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-9.0" prefHeight="36.0" prefWidth="526.0" text="CONTACT US BY PHONE:     1-800-987-6543" textFill="#a77372">
+                     <font>
+                        <Font name="Sylfaen" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>

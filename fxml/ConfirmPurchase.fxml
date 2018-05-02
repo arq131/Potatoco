@@ -118,22 +118,22 @@
                         <Image url="@../pictures/potatocoLogo.png" />
                      </image>
                   </ImageView>
-                  <SplitPane dividerPositions="0.3337" layoutY="735.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;">
+                  <SplitPane dividerPositions="0.5" layoutY="732.0" minHeight="36.0" prefHeight="36.0" prefWidth="1024.0" style="-fx-background-color: #ccf6ff;">
                      <items>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="6.0" text="FAQ" textFill="#63211f">
+                              <Hyperlink fx:id="faq" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="233.0" layoutY="4.0" text="FAQ" textFill="#63211f">
                                  <font>
-                                    <Font name="Times New Roman" size="12.0" />
+                                    <Font name="Sylfaen" size="15.0" />
                                  </font>
                               </Hyperlink>
                            </children>
                         </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="334.0">
                            <children>
-                              <Label layoutX="24.0" layoutY="4.0" prefHeight="18.0" prefWidth="425.0" text="Potatoco is awesome. &lt;- change this lol" textFill="#63211f">
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-10.0" prefHeight="36.0" prefWidth="526.0" text="CONTACT US BY PHONE:     1-800-987-6543" textFill="#a77372">
                                  <font>
-                                    <Font name="Times New Roman" size="12.0" />
+                                    <Font name="Sylfaen" size="15.0" />
                                  </font>
                               </Label>
                            </children>
