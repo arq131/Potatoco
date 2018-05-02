@@ -56,6 +56,7 @@ public class AppController implements Initializable, MyController {
 	public static final int VIEWCART = 7;
 	public static final int SIGNEDIN = 8;
 	public static final int FAQ = 9;
+	public static final int COMPLETE_PURCHASE = 10;
 	private Pane rootPane = null;
 	public int state = 0;
 	private User user;
@@ -235,7 +236,7 @@ public class AppController implements Initializable, MyController {
 			break;
 		case CONFIRMATION:
 			fxmlFile = this.getClass().getResource("/confirmPurchase.fxml");
-			controller = new ConfirmationController();
+			controller = new ConfirmationController((Cart) arg);
 			break;
 		case VIEWCART:
 			fxmlFile = this.getClass().getResource("/CartView.fxml");
@@ -250,6 +251,10 @@ public class AppController implements Initializable, MyController {
 		case FAQ:
 			fxmlFile = this.getClass().getResource("/FaqView.fxml");
 			controller = new FAQController();
+		case COMPLETE_PURCHASE:
+			user.getCart().resetCart();
+			fxmlFile = this.getClass().getResource("/LaunchScreen.fxml");
+			controller = getInstance(user);
 
 		}
 		if (fxmlFile != null) {

@@ -2,12 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
@@ -99,11 +99,11 @@
                           <content>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="635.0" style="-fx-background-color: #ccf6ff;">
                                  <children>
-                                    <TextArea layoutX="146.0" layoutY="165.0" opacity="0.75" prefHeight="200.0" prefWidth="348.0" text="WORK IN PROGRESS&#10;&#10;meanwhile, enjoy the free products &#10;&#10;:^)">
+                                    <Label alignment="CENTER" layoutX="78.0" layoutY="54.0" prefHeight="369.0" prefWidth="493.0" text="Credit Information Here" textAlignment="CENTER" textFill="#63211f">
                                        <font>
-                                          <Font size="20.0" />
+                                          <Font name="Times New Roman" size="30.0" />
                                        </font>
-                                    </TextArea>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                           </content>
@@ -139,6 +139,26 @@
                         </AnchorPane>
                      </items>
                   </SplitPane>
+                  <Button fx:id="cart" alignment="CENTER" layoutX="875.0" layoutY="102.0" mnemonicParsing="false" onAction="#returnToCart" prefHeight="48.0" prefWidth="109.0" text="CART" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="226.0" prefHeight="134.0" prefWidth="495.0" text="Potatoco" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="41.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="home" alignment="CENTER" layoutX="875.0" layoutY="175.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="48.0" prefWidth="109.0" text="HOME" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="purchase" alignment="CENTER" layoutX="458.0" layoutY="678.0" mnemonicParsing="false" onAction="#purchase" prefHeight="48.0" prefWidth="109.0" text="PURCHASE" textAlignment="CENTER" textFill="#63211f">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>

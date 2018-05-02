@@ -33,7 +33,7 @@ public class Cart {
 	}
 
 	// reset the cart to empty once purchase is made.
-	public void resetCart(Product product) {
+	public void resetCart() {
 		cartProduct.clear();
 		this.totalCost = 0.0;
 		this.itemAmt = 0;

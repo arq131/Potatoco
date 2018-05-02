@@ -108,7 +108,7 @@ public class CartController implements Initializable, MyController {
 
 	@FXML
 	public void purchase(ActionEvent event) throws Exception {
-		AppController.getInstance().changeView(AppController.CONFIRMATION, null); // this needs to go to confirm page.
+		AppController.getInstance().changeView(AppController.CONFIRMATION, cart); // this needs to go to confirm page.
 	}
 
 	@FXML
